@@ -1,0 +1,30 @@
+{% load staticfiles %}
+<html>
+<head>
+	<title>Add Student</title>
+	<link href={% static "css/bootstrap.min.css" %} rel="stylesheet">
+	<link href={% static "css/jumbotron.css" %} rel="stylesheet">
+	<link href={% static "css/design.css" %} rel="stylesheet">
+</head>
+<body>
+	<div class="jumbotron" style="background-color:#e4b9c0;">
+
+    <h1 style="color:purple"> add a course</h1>
+
+	{% if form.errors %}
+		<p style="color: red;">
+			Please correct the error{{ form.errors|pluralize }} below.
+		</p>
+	{% endif %}
+	<form action="" method="post" input="">
+	<style><CENTER>input {  padding: 1em;  border: 5px solid;  border-radius: 50px;  }</style></CENTER>
+
+		{% csrf_token %}
+		<table>
+
+			{{ form.as_table }}
+		</table>
+		<input type="submit" value="Submit">
+	</form>
+</body>
+</html>
